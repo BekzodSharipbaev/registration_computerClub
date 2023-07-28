@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% block link %}
+{% endblock link %}
+{% block style %}
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    form {
+      background-color: rgb(103, 3, 203);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    form > input {
+      color: white !important;
+    }
+  </style>
+{% endblock style %}
+{% block title %}
+  Регистрация
+{% endblock title %}
+{% block content %}
+  <form class="" method="post" action="">
+    {% csrf_token %}
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="name" id="form4Example1" class="form-control" />
+      <label class="form-label" for="form4Example1">
+        Name
+      </label>
+    </div>
+    <!-- Username input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="username" id="form4Example1" class="form-control" />
+      <label class="form-label" for="form4Example1">
+        Username
+      </label>
+    </div>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" name="email" id="form4Example2" class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Email address
+      </label>
+    </div>
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password"
+             name="password"
+             id="form4Example2"
+             class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Password
+      </label>
+    </div>
+    <!-- Phone number input -->
+    <div class="form-outline mb-4">
+      <input type="number"
+             name="phone_number"
+             id="form4Example2"
+             class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Phone Number
+      </label>
+    </div>
+    <!-- Age input -->
+    <div class="form-outline mb-4">
+      <input type="number" name="age" id="form4Example2" class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Age
+      </label>
+    </div>
+    <!-- Experience input -->
+    <div class="form-outline mb-4">
+      <input type="number"
+             name="experience"
+             id="form4Example2"
+             class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Experience
+      </label>
+    </div>
+    <!-- Operating System input -->
+    <div class="form-outline mb-4">
+      <select name="operating_system" id="">
+        {% for system in operating_systems %}
+          <option value="{{ system.0 }}">
+            {{ system.1 }}
+          </option>
+        {% endfor %}
+      </select>
+      <label class="form-label" for="form4Example2">
+        Operating System
+      </label>
+    </div>
+    <!-- Computer Hardwares input -->
+    <div class="form-outline mb-4">
+      <select name="comp_hardware" id="">
+        {% for hardware in hardwares %}
+          <option value="{{ hardware.0 }}">
+            {{ hardware.1 }}
+          </option>
+        {% endfor %}
+      </select>
+      <label class="form-label" for="form4Example2">
+        Computer Hardwares
+      </label>
+    </div>
+    <!-- Recommenders input -->
+    <div class="form-outline mb-4">
+      <select name="sources" id="">
+        {% for recommender in recommenders %}
+          <option value="{{ recommender.0 }}">
+            {{ recommender.1 }}
+          </option>
+        {% endfor %}
+      </select>
+      <label class="form-label" for="form4Example2">
+        Sources
+      </label>
+    </div>
+    <!-- Programs input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="programs" id="form4Example2" class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Programs
+      </label>
+    </div>
+    <!-- Computer games input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="comp_games" id="form4Example2" class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Computer Games
+      </label>
+    </div>
+    <!-- Profession input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="profession" id="form4Example2" class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Profession
+      </label>
+    </div>
+    <!-- Target input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="target" id="form4Example2" class="form-control" />
+      <label class="form-label" for="form4Example2">
+        Target
+      </label>
+    </div>
+    <!-- Ideas input -->
+    <div class="form-outline mb-4">
+      <textarea name="ideas" class="form-control" id="form4Example3" rows="4"></textarea>
+      <label class="form-label" for="form4Example3">
+        Ideas
+      </label>
+    </div>
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">
+      Send
+    </button>
+  </form>
+{% endblock content %}
